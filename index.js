@@ -4,7 +4,7 @@ function search(event) {
     let cityElement = document.querySelector("#current-city");
     let weather = document.querySelector(".current-temperature-value");
     let descriptionElement = document.querySelector("#description");
-    descriptionElement.innerHTML = reponse.data.condition.description;
+    descriptionElement.innerHTML = response.data.condition.description;
     let apiKey = "4b4ffe9fe8335a89335e2t0cebfo9928";
     let city = searchInputElement.value;
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
@@ -13,6 +13,7 @@ function search(event) {
     function temp(response) {
       weather.innerHTML = Math.round(response.data.temperature.current);
       cityElement.innerHTML = searchInputElement.value;
+  
     }
   }
   
