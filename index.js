@@ -6,6 +6,8 @@ function search(event) {
     let descriptionElement = document.querySelector("#description");
     let humidityElement = document.querySelector("#humidity")
     let windElement = document.querySelector("#wind-speed")
+    let iconElement = document.querySelector("#icon");
+   
     let apiKey = "4b4ffe9fe8335a89335e2t0cebfo9928";
     let city = searchInputElement.value;
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
@@ -17,6 +19,7 @@ function search(event) {
       descriptionElement.innerHTML = response.data.condition.description;
       humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
       windElement.innerHTML = `${response.data.wind.speed}km/h`;
+      iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-temperature-icon"/>`;
     }
   }
   
