@@ -52,6 +52,7 @@ function search(event) {
   
   let searchForm = document.querySelector("#search-form");
   searchForm.addEventListener("submit", search);
+  search("Paris");
   
   let currentDateELement = document.querySelector("#current-date");
   let currentDate = new Date();
