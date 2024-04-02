@@ -4,6 +4,7 @@ function search(event) {
     let cityElement = document.querySelector("#current-city");
     let weather = document.querySelector(".current-temperature-value");
     let descriptionElement = document.querySelector("#description");
+    let humidityElement = document.querySelector("#humidity")
     
     let apiKey = "4b4ffe9fe8335a89335e2t0cebfo9928";
     let city = searchInputElement.value;
@@ -14,7 +15,7 @@ function search(event) {
       weather.innerHTML = Math.round(response.data.temperature.current);
       cityElement.innerHTML = searchInputElement.value;
       descriptionElement.innerHTML = response.data.condition.description;
-  
+      humidityElement.innerHTML = `${response.data.temperature.humidity}%`
     }
   }
   
