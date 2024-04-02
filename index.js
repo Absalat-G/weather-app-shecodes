@@ -5,7 +5,7 @@ function search(event) {
     let weather = document.querySelector(".current-temperature-value");
     let descriptionElement = document.querySelector("#description");
     let humidityElement = document.querySelector("#humidity")
-    
+    let windElement = document.querySelector("#wind-speed")
     let apiKey = "4b4ffe9fe8335a89335e2t0cebfo9928";
     let city = searchInputElement.value;
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
@@ -15,7 +15,8 @@ function search(event) {
       weather.innerHTML = Math.round(response.data.temperature.current);
       cityElement.innerHTML = searchInputElement.value;
       descriptionElement.innerHTML = response.data.condition.description;
-      humidityElement.innerHTML = `${response.data.temperature.humidity}%`
+      humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+      windElement.innerHTML = `${response.data.wind.speed}km/h`;
     }
   }
   
